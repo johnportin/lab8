@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>John Portin</title>
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+<body>
+
+
+    <h1>
+        Welcome to the page
+    </h1>
+
+    <form>
+        <label for="passwordBox1">Password 1:</label>
+        <input type="text" id="passwordBox1" name="passwordBox2">
+        <br>
+        <br>
+        <label for="passwordBox2">Password 2:</label>
+        <input type="text" id="passwordBox2" name="passwordBox2">
+        <br>
+        <br>
+        <input type="button" value="Validate" onclick="comparePasswords()">
+    </form>
+  <!-- <script src="js/scripts.js"></script> -->
+  <script>
+      function comparePasswords() {
+          const pw1 = document.getElementById("passwordBox1").value;
+          const pw2 = document.getElementById("passwordBox2").value;
+        
+          if (pw1.length < 8 || pw2.length < 8) {
+              alert("Passwords must have at least 8 characters.");
+          } else {
+              if (pw1 == pw2) {
+                  alert("Password match.");
+              } else {
+                  alert("Passwords don't match. Try again.")
+              }
+          }
+      }
+  </script>
+</body>
+
+</html>
