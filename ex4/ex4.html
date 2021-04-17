@@ -1,0 +1,102 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 4</title>
+    <link href="myStyle.css"
+      rel="stylesheet"
+      type="text/css"/>
+  </head>
+  <body>
+    <div>
+      <p id="testParagraph" class="test">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Egestas dui id ornare arcu odio ut. Felis eget nunc lobortis mattis aliquam faucibus.
+        Turpis massa tincidunt dui ut ornare lectus sit amet est.
+        Semper quis lectus nulla at volutpat diam ut venenatis tellus.
+        Senectus et netus et malesuada fames ac turpis egestas.
+        Iaculis at erat pellentesque adipiscing commodo elit at.
+        Id faucibus nisl tincidunt eget.
+        Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui.
+        Ut pharetra sit amet aliquam id.
+        Diam phasellus vestibulum lorem sed risus ultricies tristique nulla.
+        Feugiat nibh sed pulvinar proin gravida. Ut porttitor leo a diam sollicitudin.
+        Molestie nunc non blandit massa enim nec.
+        Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat.
+        Rutrum quisque non tellus orci. Sodales ut etiam sit amet nisl purus.
+        Tristique sollicitudin nibh sit amet commodo.
+      </p>
+    </div>
+
+    <div class="border">
+      <p>Define the border parameters below</p>
+      <label for="borderRed">Red</label>
+      <input type="text" placeholder="0-255" name="borderRed" id="borderRed"/>
+
+      <label for="borderGreen">Green</label>
+      <input type="text" placeholder="0-255" name="borderGreen" id="borderGreen"/>
+
+      <label for="borderBlue">Blue</label>
+      <input type="text" placeholder="0-255" name="borderBlue" id="borderBlue"/>
+
+      <label for="borderWidth">Width</label>
+      <input type="number" name="borderWidth" id="borderWidth"/>
+    </div>
+
+    <div class="backgroundColor">
+      <p>Define the background color below</p>
+      <label for="backgroundRed">Red</label>
+      <input type="text" placeholder="0-255" name="backgroundRed" id="backgroundRed"/>
+
+      <label for="backgroundGreen">Green</label>
+      <input type="text" placeholder="0-255" name="backgroundGreen" id="backgroundGreen"/>
+
+      <label for="backgroundBlue">Blue</label>
+      <input type="text" placeholder="0-255" name="backgroundBlue" id="backgroundBlue"/>
+    </div>
+
+    <div>
+      <button onclick="changeValues()">Change!</button>
+    </div>
+
+    <script>
+      function changeValues() {
+
+        // Get new values
+        const newBorderRed = document.getElementById('borderRed').value;
+        const newBorderBlue = document.getElementById('borderBlue').value;
+        const newBorderGreen = document.getElementById('borderGreen').value;
+        const newBorderWidth = document.getElementById('borderWidth').value;
+
+        const newBackgroundRed = document.getElementById('backgroundRed').value;
+        const newBackgroundGreen = document.getElementById('backgroundGreen').value;
+        const newBackgroundBlue = document.getElementById('backgroundBlue').value;
+
+        // Get paragraph
+        var paragraph = document.getElementById("testParagraph");
+
+        // make rgb strings
+        var backgroundString = "rgb("
+          + String(newBackgroundRed) + ", "
+          + String(newBackgroundGreen) + ", "
+          + String(newBackgroundBlue) + ")";
+
+        var bordercolorString = "rgb("
+          + String(newBorderRed) + ", "
+          + String(newBorderGreen) + ", "
+          + String(newBorderBlue) + ")";
+
+        console.log(backgroundString);
+
+        // Change attributes
+        paragraph.style.backgroundColor = backgroundString;
+        paragraph.style.borderColor = bordercolorString;
+
+        var temp = String(newBorderWidth) + "px";
+        paragraph.style.borderWidth = newBorderWidth;
+      }
+    </script>
+
+  </body>
+</html>
