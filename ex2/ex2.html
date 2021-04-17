@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Slide Show!</title>
+</head>
+
+<body>
+
+  <h1>This slide show is dedicated to my dog, Tobie</h1>
+  <h3>RIP Tobie: 4/15/2021</h4>
+    <div id="slideShow">
+      <button id="goBack" onclick="previousPic()">Previous</button>
+      <img src="pic1.jpeg" id="picFrame" width="450" height="600">
+      <button id="goForward" onclick="nextPic()">Next</button>
+    </div>
+
+    <script>
+      var currentPic = 0;
+      var images = [
+        "pic1.jpeg",
+        "pic2.jpeg",
+        "pic3.jpeg",
+        "pic4.jpeg",
+        "pic5.jpeg"
+      ];
+
+      function nextPic() {
+        currentPic += 1;
+        currentPic %= images.length;
+        document.getElementById("picFrame").src = images[currentPic];
+      }
+
+      function previousPic() {
+        currentPic -= 1;
+        currentPic = ((currentPic % images.length) + images.length) % images.length;
+        document.getElementById("picFrame").src = images[currentPic];
+      }
+    </script>
+</body>
+</html>
